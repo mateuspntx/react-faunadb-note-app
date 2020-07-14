@@ -1,38 +1,50 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  display: flex;
+  margin: 75px 0 25px;
+  flex-direction: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.note-row p {
+  margin: 0 34px 0 0;
+  padding: 0;
+  outline: none;
+  min-width: 250px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.note-input {
+  height: 32px;
+  border: none;
+  padding: 5px 20px;
+  min-width: 250px;
+  border-radius: 4.5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  outline: none;
+}
+
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.note-row {
+  margin: 12px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
 }
