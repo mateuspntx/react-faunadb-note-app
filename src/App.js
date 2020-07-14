@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import { getAllNotes, deleteNote, editNote } from './api'
+import { NoteList, NoteForm } from './components'
 
 function App() {
   const [notes, setNotes] = useState([])
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <header className="App-container">
         <div className="notes-container">
-
+          <NoteForm notes={notes} setNotes={setNotes} />
         </div>
       </header>
     </div>
