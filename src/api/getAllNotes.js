@@ -9,7 +9,7 @@ const getAllNotes = client.query(
         const notesRefs = response.data
         //create new query out of notes refs
         
-        const getAllProductDataQuery = noteRefs.map((ref) => {
+        const getAllProductDataQuery = notesRefs.map((ref) => {
             return q.Get(ref)
         })
         //query the refs
