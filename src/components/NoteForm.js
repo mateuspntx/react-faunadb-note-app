@@ -15,6 +15,7 @@ const NoteForm = ({ notes, setNotes }) => {
         createNote(values.note).then(res => {
           const newNotesArray = notes.concat([res])
           setNotes(newNotesArray)
+          console.success('it worked')
           toast.success('Added Successfully')
           form.resetFields()
         })
@@ -31,8 +32,8 @@ const NoteForm = ({ notes, setNotes }) => {
             size="large"
             placeholder="Add New Note"
           />
-          <Button>Create</Button>
       </Form.Item>
+      <Button htmlType="submit">Create</Button>
 
   </Form>
   )
