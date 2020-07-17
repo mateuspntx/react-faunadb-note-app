@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <ToastContainer/>
+      <ToastContainer style={{'fontSize': '16px'}}/>
       <header className="App-container">
         <div className="notes-container">
           <NoteForm notes={notes} setNotes={setNotes} />

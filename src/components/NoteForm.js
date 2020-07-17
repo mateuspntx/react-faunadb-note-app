@@ -16,8 +16,7 @@ const NoteForm = ({ notes, setNotes }) => {
       form.resetFields()
     })
   }
-  
-  
+
   return (
     <Form form={form} name="create_note" style={{marginBottom: '25px'}} layout="horizontal" onFinish={handleSubmit}>
       <Form.Item name="note" rules={[{ required: true }]}>
@@ -28,11 +27,8 @@ const NoteForm = ({ notes, setNotes }) => {
           />
       </Form.Item>
       <Button htmlType="submit">Create</Button>
-
   </Form>
   )
 }
-
-//const WrappedNoteForm = Form.create({name: 'notes_form'})(NoteForm)
 
 export default NoteForm;
