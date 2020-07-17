@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 import { Button } from 'antd'
-import { DeleteOutlined } from '@ant-design/icons'
+import { DeleteTwoTone} from '@ant-design/icons'
 
 const NoteList = memo(({data, onRemove, onEdit}) => (
     <>
@@ -16,10 +16,11 @@ const NoteList = memo(({data, onRemove, onEdit}) => (
                     {note.data.text}
             </p>
             <Button
+                danger
                 onClick={(e) => onRemove(e, note.ref.id)}
-                theme="twoTone" style={{ cursor: "pointer", fontSize: '16px'}}
-                type="Delete"
-                icon={<DeleteOutlined />}
+                style={{ cursor: "pointer", fontSize: '16px'}}
+                type="text"
+                icon={<DeleteTwoTone twoToneColor="#DA0D0D"/>}
             />
         </div>
     ))}
