@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 
 const NoteForm = ({ notes, setNotes }) => {
 
-  //const { validateFields, resetFields } = form;
   const [form] = Form.useForm()
 
   const handleSubmit = (e) => {
@@ -19,7 +18,7 @@ const NoteForm = ({ notes, setNotes }) => {
 
   return (
     <Form form={form} name="create_note" style={{marginBottom: '25px'}} layout="horizontal" onFinish={handleSubmit}>
-      <Form.Item name="note" rules={[{ required: true }]}>
+      <Form.Item name="note" rules={[{ required: true, message: 'Write some beautiful words...' }]}>
           <Input
             className="note-input"
             size="large"
