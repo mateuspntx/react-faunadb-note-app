@@ -8,25 +8,19 @@ const NoteForm = ({ notes, setNotes }) => {
   //const { validateFields, resetFields } = form;
   const [form] = Form.useForm()
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    form.validateFields((err, values) => {
-      if (!err && values.note) {
-        createNote(values.note).then(res => {
-          const newNotesArray = notes.concat([res])
-          setNotes(newNotesArray)
-          console.success('it worked')
-          toast.success('Added Successfully')
-          form.resetFields()
-        })
-      }
-    });
+  const handleSubmit = (e) => {
+    createNote(form.getFieldValue('note')).then(res => {
+      const newNotesArray = notes.concat([res])
+      setNotes(newNotesArray)
+      toast.success('Added Successfully')
+      form.resetFields()
+    })
   }
   
   
   return (
-    <Form style={{marginBottom: '25px'}} layout="horizontal" onSubmit={handleSubmit}>
-      <Form.Item rules={[{ required: true }]}>
+    <Form form={form} name="create_note" style={{marginBottom: '25px'}} layout="horizontal" onFinish={handleSubmit}>
+      <Form.Item name="note" rules={[{ required: true }]}>
           <Input
             className="note-input"
             size="large"

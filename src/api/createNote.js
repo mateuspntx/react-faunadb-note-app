@@ -5,7 +5,7 @@ const createNote = text => client.query(
         q.Collection('notes'),
         {
             data: {
-                text
+                text,
             },
         },
     )
